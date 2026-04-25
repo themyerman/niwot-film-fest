@@ -6,7 +6,7 @@
   --accent:   #B85528;
   --muted:    #7A7068;
   --border:   #DDD9D2;
-  --max:      1000px;
+  --max:      820px;
   --font-h:   'Cormorant Garamond', Georgia, serif;
   --font-b:   'Raleway', system-ui, sans-serif;
 }
@@ -357,13 +357,12 @@ nav .wrap {
 .page-header p {
   font-size: 1.1rem;
   color: var(--muted);
-  max-width: 55ch;
   margin-top: .75rem;
 }
 
 /* ── About ── */
 
-.about-body { max-width: 65ch; }
+.about-body { max-width: 100%; }
 .about-body h2 { margin-top: 1.5rem; margin-bottom: .4rem; }
 .about-body h2:first-child { margin-top: 0; }
 
