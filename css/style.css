@@ -427,6 +427,36 @@ footer .wrap {
   margin-top: .5rem;
 }
 
+/* ── FAQ ── */
+
+.faq { margin-top: 1rem; }
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-item h3 {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 600;
+  margin-bottom: .4rem;
+}
+
+.faq-item p { color: var(--muted); margin-bottom: 0; }
+
+/* ── Press ── */
+
+.press-facts {
+  list-style: none;
+  margin: .75rem 0 1.5rem;
+  display: grid;
+  gap: .4rem;
+}
+
+.press-facts li { font-size: .9375rem; color: var(--muted); }
+.press-facts li strong { color: var(--ink); }
+
 /* ── Images ── */
 
 .img-banner {
