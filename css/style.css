@@ -1,0 +1,381 @@
+/* ── Niwot Film Festival ── */
+
+:root {
+  --bg:       #F7F4EF;
+  --ink:      #1A1714;
+  --accent:   #B85528;
+  --muted:    #7A7068;
+  --border:   #DDD9D2;
+  --max:      1000px;
+  --font-h:   'Playfair Display', Georgia, serif;
+  --font-b:   'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-b);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+img { display: block; max-width: 100%; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Typography ── */
+
+h1, h2, h3 { font-family: var(--font-h); line-height: 1.15; }
+
+h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); margin-bottom: 1rem; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin-bottom: .5rem; }
+
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* ── Layout ── */
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: 5rem 0; }
+section + section { border-top: 1px solid var(--border); }
+
+/* ── Nav ── */
+
+nav {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-brand {
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+.nav-brand:hover { text-decoration: none; }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--ink);
+  font-size: .875rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.nav-links a:hover,
+.nav-links a.active { color: var(--accent); text-decoration: none; }
+
+/* ── Hero ── */
+
+.hero {
+  padding: 7rem 0 6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-eyebrow {
+  font-size: .8rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 { margin-bottom: 1.25rem; max-width: 16ch; }
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--muted);
+  max-width: 50ch;
+  margin-bottom: 2.5rem;
+}
+
+.btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block;
+  padding: .75rem 1.75rem;
+  font-size: .875rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  transition: background .15s, color .15s;
+}
+.btn:hover { background: var(--ink); color: var(--bg); text-decoration: none; }
+
+.btn-fill {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+.btn-fill:hover { background: var(--ink); border-color: var(--ink); color: #fff; }
+
+/* ── Pillars ── */
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+}
+
+.pillar-label {
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+
+/* ── Cards ── */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+.card-date {
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .5rem;
+}
+
+.card h3 { margin-bottom: .75rem; }
+
+.card p { color: var(--muted); font-size: .9375rem; }
+
+/* ── Tracks ── */
+
+.track {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+.track:last-child { border-bottom: none; }
+
+.track-label {
+  font-size: .75rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: .25rem;
+}
+
+@media (max-width: 600px) {
+  .track { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+/* ── Schedule ── */
+
+.day { margin-bottom: 3.5rem; }
+.day:last-child { margin-bottom: 0; }
+
+.day-header {
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: .75rem;
+  margin-bottom: 1.5rem;
+}
+
+.day-header h3 { font-family: var(--font-h); font-size: 1.3rem; }
+.day-header p { color: var(--muted); font-size: .875rem; margin: .25rem 0 0; }
+
+.event {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem 2rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.event:last-child { border-bottom: none; }
+
+.event-time {
+  font-size: .8125rem;
+  color: var(--muted);
+  letter-spacing: .04em;
+  padding-top: .15rem;
+}
+
+.event-title {
+  font-family: var(--font-h);
+  font-size: 1rem;
+  margin-bottom: .25rem;
+}
+
+.event-desc { font-size: .875rem; color: var(--muted); margin-bottom: .25rem; }
+.event-venue { font-size: .8125rem; color: var(--muted); font-style: italic; }
+
+@media (max-width: 520px) {
+  .event { grid-template-columns: 1fr; gap: .25rem; }
+  .event-time { color: var(--accent); }
+}
+
+/* ── Venues ── */
+
+.venue-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.venue-list li {
+  border: 1px solid var(--border);
+  padding: 1.25rem 1.5rem;
+  font-size: .9375rem;
+}
+
+.venue-list strong { display: block; font-family: var(--font-h); }
+.venue-list span { font-size: .8125rem; color: var(--muted); }
+
+/* ── Submit page ── */
+
+.form-intro { max-width: 60ch; margin-bottom: 2.5rem; }
+
+.form-placeholder {
+  border: 2px dashed var(--border);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: .9375rem;
+  margin-bottom: 3rem;
+}
+
+.form-placeholder p { margin-bottom: .5rem; }
+
+.involve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.involve-block h3 { margin-bottom: .75rem; }
+.involve-block p { font-size: .9375rem; color: var(--muted); }
+
+/* ── Page header (inner pages) ── */
+
+.page-header {
+  padding: 4rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-header .eyebrow {
+  font-size: .75rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 55ch;
+  margin-top: .75rem;
+}
+
+/* ── About ── */
+
+.about-body { max-width: 65ch; }
+.about-body h2 { margin-top: 2.5rem; margin-bottom: 1rem; }
+.about-body h2:first-child { margin-top: 0; }
+
+.pull-quote {
+  border-left: 3px solid var(--accent);
+  margin: 2rem 0;
+  padding: 1rem 1.5rem;
+  font-family: var(--font-h);
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+/* ── Footer ── */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  margin-top: 2rem;
+}
+
+footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-brand {
+  font-family: var(--font-h);
+  font-size: 1rem;
+  color: var(--ink);
+}
+
+.footer-brand span {
+  display: block;
+  font-family: var(--font-b);
+  font-size: .8125rem;
+  color: var(--muted);
+  margin-top: .25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  font-size: .8125rem;
+  color: var(--muted);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.footer-links a:hover { color: var(--accent); text-decoration: none; }
+
+.footer-copy {
+  font-size: .8rem;
+  color: var(--muted);
+  width: 100%;
+  margin-top: .5rem;
+}
