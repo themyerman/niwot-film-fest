@@ -32,10 +32,10 @@ a:hover { text-decoration: underline; }
 h1, h2, h3 { font-family: var(--font-h); line-height: 1.15; }
 
 h1 { font-size: clamp(2.4rem, 6vw, 4.5rem); }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); margin-bottom: 1rem; }
-h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin-bottom: .5rem; }
+h2 { font-size: clamp(1.6rem, 3.5vw, 2.5rem); margin-bottom: .75rem; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin-bottom: .4rem; }
 
-p { margin-bottom: 1rem; }
+p { margin-bottom: .75rem; }
 p:last-child { margin-bottom: 0; }
 
 /* ── Layout ── */
@@ -46,7 +46,7 @@ p:last-child { margin-bottom: 0; }
   padding: 0 1.5rem;
 }
 
-section { padding: 5rem 0; }
+section { padding: 3.5rem 0; }
 section + section { border-top: 1px solid var(--border); }
 
 /* ── Nav ── */
@@ -95,7 +95,7 @@ nav .wrap {
 /* ── Hero ── */
 
 .hero {
-  padding: 7rem 0 6rem;
+  padding: 5rem 0 4rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -142,7 +142,8 @@ nav .wrap {
 .pillars {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2.5rem;
+  gap: 1.75rem;
+  margin-top: 1.25rem;
 }
 
 .pillar-label {
