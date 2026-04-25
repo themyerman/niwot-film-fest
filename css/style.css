@@ -155,12 +155,11 @@ nav .wrap {
   margin-bottom: .5rem;
 }
 
-.hero h1 { margin-bottom: .75rem; max-width: 16ch; }
+.hero h1 { margin-bottom: .75rem; }
 
 .hero-sub {
   font-size: clamp(1rem, 2vw, 1.2rem);
   color: var(--muted);
-  max-width: 50ch;
   margin-bottom: 1.5rem;
 }
 
