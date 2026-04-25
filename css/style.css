@@ -55,7 +55,8 @@ nav {
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  background: #2C3E50;
+  background: #fff;
+  border-bottom: 1px solid var(--border);
   z-index: 10;
 }
 
@@ -71,10 +72,36 @@ nav .wrap {
   font-family: var(--font-h);
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--bg);
+  color: var(--ink);
   letter-spacing: .02em;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
 }
-.nav-brand:hover { text-decoration: none; color: #fff; }
+.nav-brand:hover { text-decoration: none; color: var(--ink); }
+
+.nav-logo {
+  height: 60px;
+  width: auto;
+}
+
+.hero-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.hero-text { flex: 1; }
+
+.hero-logo {
+  width: 220px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .hero-wrap { flex-direction: column; gap: 1.5rem; }
+  .hero-logo { width: 140px; }
+}
 
 .nav-links {
   display: flex;
@@ -84,17 +111,17 @@ nav .wrap {
 }
 
 .nav-links a {
-  color: rgba(255,255,255,.65);
+  color: var(--muted);
   font-size: .8125rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   font-weight: 600;
   padding: .4rem .75rem;
   border-radius: 6px;
-  background: rgba(255,255,255,.07);
+  background: var(--border);
   transition: color .15s, background .15s;
 }
-.nav-links a:hover { color: #fff; background: rgba(0,0,0,.15); text-decoration: none; }
+.nav-links a:hover { color: var(--ink); background: #ccc8c1; text-decoration: none; }
 .nav-links a.active { color: #fff; background: var(--accent); text-decoration: none; }
 
 .nav-toggle {
@@ -124,7 +151,7 @@ nav .wrap {
     width: 100%;
     flex-direction: column;
     gap: 0;
-    border-top: 1px solid rgba(255,255,255,.15);
+    border-top: 1px solid var(--border);
     margin-top: .75rem;
     padding-top: .75rem;
   }
@@ -139,10 +166,10 @@ nav .wrap {
     font-size: .9375rem;
     border-radius: 0;
     background: none;
-    color: rgba(255,255,255,.7);
+    color: var(--ink);
   }
-  .nav-links a:hover { color: #fff; background: none; }
-  .nav-links a.active { color: #fff; background: none; }
+  .nav-links a:hover { color: var(--accent); background: none; }
+  .nav-links a.active { color: var(--accent); background: none; }
 
   .nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
