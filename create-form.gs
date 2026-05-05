@@ -13,7 +13,7 @@ function createSubmissionForm() {
   form.setDescription(
     'Submit your film to the Niwot Film Festival, January 21–31, 2027 · Niwot, Colorado.\n\n' +
     'No entry fee. All tracks welcome features, documentaries, and shorts. ' +
-    'Youth Track films must be 8–10 minutes and made by current middle or high school students. ' +
+    'Youth Track films must be 15 minutes or under and made by current middle or high school students. ' +
     'You may submit to more than one track.'
   );
 
@@ -96,7 +96,7 @@ function createSubmissionForm() {
       'New Neighbors Showcase — Immigrant and diaspora perspectives',
       'Colorado Spotlight — Colorado filmmakers and/or stories',
       'Environmental Track — Water, land, climate, and ecology',
-      'Youth Track — Films by middle or high school students (8–10 min)'
+      'Youth Track — Films by middle or high school students (15 min or under)'
     ]);
 
   // ── Section 4: Anything Else ──────────────────────────────────
